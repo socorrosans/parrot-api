@@ -28,6 +28,6 @@ const Resident = myDatabase.define("Resident", {
     type: DataTypes.STRING,
     allowNull: true
   }
-})
+}, {timestamps: false}, {tableName: "residents"})
 
 export default Resident;
