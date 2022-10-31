@@ -29,3 +29,5 @@ const Resident = myDatabase.define("Resident", {
     allowNull: true
   }
 })
+
+export default Resident;
