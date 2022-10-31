@@ -1,4 +1,4 @@
-import myDatabase from "../database";
+import myDatabase from "../database/index.js";
 import { DataTypes } from "sequelize";
 
 const Resident = myDatabase.define("Resident", {

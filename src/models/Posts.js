@@ -1,6 +1,6 @@
-import myDatabase from "../database";
+import myDatabase from "../database/index.js";
 import { DataTypes } from "sequelize";
-import Resident from "./Residents";
+import Resident from "./Residents.js";
 
 const Post = myDatabase.define("Post", {
   post_id: {
@@ -16,7 +16,7 @@ const Post = myDatabase.define("Post", {
     type: DataTypes.INTEGER,
     references: {
       model: Resident,
-      key: resident_id
+      key: "resident_id"
     }
   }
 }, {timestamps: false}, {tableName: "posts"})
