@@ -14,7 +14,7 @@ const registerController = {
       link_photo
     })
 
-    res.status(201)
+    res.status(201).json("residente cadastrado")
   }
 }
 

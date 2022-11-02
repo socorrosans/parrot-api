@@ -3,4 +3,4 @@ import Post from "./Posts.js";
 
 Resident.hasMany(Post);
 
-export default Resident;
+export default {Resident, Post};
