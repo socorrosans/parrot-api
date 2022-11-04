@@ -8,7 +8,7 @@ const Post = myDatabase.define("Post", {
     primaryKey: true,
     autoIncrement: true
   },
-  text: {
+  post_content: {
     type: DataTypes.STRING,
     allowNull: false
   },

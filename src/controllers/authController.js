@@ -25,7 +25,7 @@ const authController = {
     if(!bcryptjs.compareSync(password, resident.password)){
       return res.status(401).json("dados inválidos")
     }
-    return res.status(200).json(jwtoken)
+    return res.status(200).json({auth: true, token: jwtoken})
   }
 }
 

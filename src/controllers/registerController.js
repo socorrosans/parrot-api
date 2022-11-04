@@ -1,4 +1,4 @@
-import Resident from "../models/index.js";
+import Resident from "../models/Residents.js";
 import bcryptjs from "bcryptjs";
 
 const registerController = {
