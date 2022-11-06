@@ -13,6 +13,7 @@ CREATE TABLE residents (
 CREATE TABLE posts ( 
  post_id INT PRIMARY KEY AUTO_INCREMENT,  
  post_content VARCHAR(150) NOT NULL,  
+ created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
  resident_id INT NOT NULL
 ); 
 

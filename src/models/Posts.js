@@ -12,6 +12,9 @@ const Post = myDatabase.define("Post", {
     type: DataTypes.STRING,
     allowNull: false
   },
+  created_at: {
+    type: DataTypes.DATE
+  },
   resident_id: {
     type: DataTypes.INTEGER,
     references: {

@@ -8,5 +8,6 @@ const routes = express.Router()
 routes.post("/register", registerController.registerResident)
 routes.post("/login", authController.login)
 routes.post("/posts", verifyJWT, postController.publication)
-
+routes.get("/feed", verifyJWT, postController.listPosts)
+routes.get("/user", verifyJWT, postController.listPostsUser)
 export default routes;

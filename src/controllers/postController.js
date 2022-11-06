@@ -12,7 +12,32 @@ const postController = {
     } catch (error) {
       res.status(400).json(error)
     }
+  },
+
+  async listPosts(req, res) {
+    try {
+      const posts = await Post.findAll()
+      res.status(200).json(posts)
+    } catch(error) {
+      res.status(404).json(error)
+    }
+  },
+
+  async listPostsUser(req, res) {
+    const {resi_id} = req.body
+    try {
+      const postsUser = await Post.findAll({
+        where: {
+          resident_id: resi_id
+        }
+      })
+      res.status(200).json(postsUser)
+
+    } catch(error){
+      res.status(404).json(error)
+    }
   }
+
 }
 
 export default postController;
