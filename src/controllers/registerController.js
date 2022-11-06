@@ -6,7 +6,7 @@ const registerController = {
     const {name, email, password, apartment, link_photo} = req.body
     const cryptPassword = await bcryptjs.hashSync(password, 10)
 
-    const newResident = Resident.create({
+    Resident.create({
       name, 
       email,
       password: cryptPassword,

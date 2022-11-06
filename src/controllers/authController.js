@@ -18,14 +18,14 @@ const authController = {
     }
 
     const jwtoken = jwt.sign({
-      id: resident.id,
+      id: resident.resident_id,
       email: resident.email,
     }, secret.key)
 
     if(!bcryptjs.compareSync(password, resident.password)){
       return res.status(401).json("dados inválidos")
     }
-    return res.status(200).json({auth: true, token: jwtoken})
+    return res.status(200).json({token: jwtoken})
   }
 }
 
