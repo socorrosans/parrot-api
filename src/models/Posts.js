@@ -24,4 +24,8 @@ const Post = myDatabase.define("Post", {
   }
 }, {timestamps: false}, {tableName: "posts"})
 
+Post.belongsTo(Resident, {
+  foreignKey: "resident_id"
+})
+
 export default Post;
