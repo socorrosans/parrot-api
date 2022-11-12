@@ -13,10 +13,10 @@ const registerController = {
     })
 
     if(searchUser){
-      res.status(200).json("Usuário já cadastrado")
+      return res.status(200).json("Usuário já cadastrado")
     } else {
-        Resident.create({
-        name, 
+      Resident.create({
+        name,
         email,
         password: cryptPassword,
         apartment,

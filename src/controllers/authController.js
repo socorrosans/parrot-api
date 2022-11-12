@@ -14,7 +14,7 @@ const authController = {
     })
 
     if(!resident){
-      res.status(404).json("residente não cadastrado")
+      return res.status(401).json("Usuário não cadastrado")
     }
 
     const jwtoken = jwt.sign({
@@ -23,9 +23,10 @@ const authController = {
     }, secret.key)
 
     if(!bcryptjs.compareSync(password, resident.password)){
-      return res.status(401).json("dados inválidos")
+      return res.status(401).json("Dados inválidos")
+    } else {
+      return res.status(200).json(jwtoken)
     }
-    return res.status(200).json({token: jwtoken})
   }
 }
 

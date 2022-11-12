@@ -9,9 +9,9 @@ const postController = {
         post_content,
         resident_id: resi_id
       })
-      res.status(201).json(post_content)
+      return res.status(201).json("Post criado")
     } catch (error) {
-      res.status(400).json(error)
+      return res.status(400).json(error)
     }
   },
 
@@ -27,9 +27,9 @@ const postController = {
         return {owner: post.Resident.name, email: post.Resident.email, apartment: post.Resident.apartment, post: post.post_content, created: post.created_at}
       })
 
-      res.status(200).json(allPosts)
+      return res.status(200).json(allPosts)
     } catch(error) {
-      res.status(404).json(error)
+      return res.status(404).json(error)
     }
   },
 
@@ -50,13 +50,13 @@ const postController = {
       })
 
       if(allUserPosts.length == 0){ 
-        res.status(200).json("Usuário ainda não fez publicações")
+        return res.status(200).json("Usuário ainda não fez publicações")
       } else {
-        res.status(200).json(allUserPosts)
+        return res.status(200).json(allUserPosts)
       }
 
     } catch(error){
-      res.status(404).json(error)
+      return res.status(404).json(error)
     }
   }
 }
