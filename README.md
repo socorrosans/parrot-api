@@ -8,5 +8,6 @@ To run this project, you need:
 - Go to the "database" folder;
 - Copy sql script "project-parrot" and generate the database;
 - Still in the database folder, open the index.js and change "cfg" to your database settings;
-- in the "routes" folder, it's possible to see the routes that must be accessed;
+- to access some routes, you must inform the token returned when logging in.
+- You also can see the documentation, to see the routes;
 - npm run dev to run the project;
