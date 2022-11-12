@@ -6,7 +6,13 @@ const DB_CONFIG = {
   port: 3306
 }
 
-const myDatabase = new Sequelize("parrot", "root", "mysql", DB_CONFIG);
+const cfg = {
+  name: "parrot",
+  user: "root",
+  pass: "mysql"
+}
+
+const myDatabase = new Sequelize(cfg.name, cfg.user, cfg.pass, DB_CONFIG);
 
 async function testingConnection(){
   try {
