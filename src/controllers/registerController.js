@@ -6,15 +6,24 @@ const registerController = {
     const {name, email, password, apartment, link_photo} = req.body
     const cryptPassword = await bcryptjs.hashSync(password, 10)
 
-    Resident.create({
-      name, 
-      email,
-      password: cryptPassword,
-      apartment,
-      link_photo
+    const searchUser = await Resident.findOne({
+      where: {
+        email
+      }
     })
 
-    res.status(201).json("residente cadastrado")
+    if(searchUser){
+      res.status(200).json("Usuário já cadastrado")
+    } else {
+        Resident.create({
+        name, 
+        email,
+        password: cryptPassword,
+        apartment,
+        link_photo
+      })
+      res.status(201).json("Ok")
+    }
   }
 }
 
