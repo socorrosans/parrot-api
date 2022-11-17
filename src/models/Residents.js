@@ -17,7 +17,7 @@ const Resident = myDatabase.define("Resident", {
     unique: true
   },
   password: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
     allowNull: false
   },
   apartment: {

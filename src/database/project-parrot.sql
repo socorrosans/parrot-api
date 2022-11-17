@@ -5,7 +5,7 @@ CREATE TABLE residents (
  resident_id INT PRIMARY KEY AUTO_INCREMENT,  
  name VARCHAR(30) NOT NULL,  
  email VARCHAR(30) NOT NULL UNIQUE,  
- password TEXT NOT NULL,  
+ password VARCHAR(200) NOT NULL,  
  apartment VARCHAR(3) NOT NULL,  
  link_photo VARCHAR(150)
 ); 
