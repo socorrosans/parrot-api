@@ -9,7 +9,7 @@ const postController = {
         post_content,
         resident_id: resi_id
       })
-      return res.status(201).json("Post criado")
+      return res.status(201).json("Publicado!")
     } catch (error) {
       return res.status(400).json(error)
     }
@@ -26,6 +26,10 @@ const postController = {
       const allPosts = posts.map(post => {
         return {owner: post.Resident.name, email: post.Resident.email, apartment: post.Resident.apartment, post: post.post_content, created: post.created_at}
       })
+
+      if(allPosts.length == 0) {
+        return res.status(200).json("Não há publicações por enquanto :(")
+      }
 
       return res.status(200).json(allPosts)
     } catch(error) {

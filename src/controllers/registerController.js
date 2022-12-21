@@ -13,7 +13,7 @@ const registerController = {
     })
 
     if(searchUser){
-      return res.status(200).json("Usuário já cadastrado")
+      return res.status(401).json("Usuário já cadastrado")
     } else {
       Resident.create({
         name,

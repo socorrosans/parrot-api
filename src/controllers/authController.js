@@ -14,7 +14,7 @@ const authController = {
     })
 
     if(!resident){
-      return res.status(401).json("Usuário não cadastrado")
+      return res.status(401).json("E-mail não cadastrado, verifique seu e-mail!")
     }
 
     const jwtoken = jwt.sign({
@@ -23,9 +23,9 @@ const authController = {
     }, secret.key)
 
     if(!bcryptjs.compareSync(password, resident.password)){
-      return res.status(401).json("Dados inválidos")
+      return res.status(401).json("Dados inválidos, verifique sua senha!")
     } else {
-      return res.status(200).json(jwtoken)
+      return res.status(200).json({token: jwtoken, user: resident.name, id: resident.resident_id, apartment: resident.apartment, email: resident.email})
     }
   }
 }
